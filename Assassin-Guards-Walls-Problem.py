@@ -155,3 +155,80 @@ def solution(B, visualize=False):
     if visualize:
         draw_maze(board, explored)
     return False  # No path found
+
+
+
+# Test Cases and Expected Outputs
+test_cases = [
+    # Example 1: Basic Path
+    {
+        "input": [
+            "A....",
+            ".....",
+            ".....",
+            ".....",
+            "....."
+        ],
+        "expected_output": True
+    },
+    
+    # Example 2: Blocked Path by Guard and path between two walls
+    {
+        "input": [
+            "A....",
+            "..^..",
+            "..>..",
+            "..X..",
+            "X...."
+        ],
+        "expected_output": True
+    },
+    
+    # Example 3: Guard vision Path blocked by Wall
+    {
+        "input": [
+            "A....",
+            "..X..",
+            "..^..",
+            "..X..",
+            "....."
+        ],
+        "expected_output": True
+    },
+    
+    # Example 4: Guard observing the target position
+    {
+        "input": [
+            "A....",
+            ".....",
+            "....v",
+            ".....",
+            ".X..."
+        ],
+        "expected_output": False
+    },
+    
+    # Example 5: Zigzag path
+    {
+        "input": [
+            "AX..X",
+            "..X..",
+            "X..X.",
+            ".X..X",
+            "X.X.."
+        ],
+        "expected_output": True
+    },
+    
+    # Example 6: Blocked by walls
+    {
+        "input": [
+            "AX...",
+            "X....",
+            ".....",
+            ".....",
+            "....."
+        ],
+        "expected_output": False
+    }
+]
