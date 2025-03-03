@@ -232,3 +232,14 @@ test_cases = [
         "expected_output": False
     }
 ]
+
+
+
+# Run Test Cases
+for i, test_case in enumerate(test_cases):
+    board = test_case["input"]
+    expected = test_case["expected_output"]
+    
+    result = solution(board, visualize=True)  # Enable visualization
+    
+    print(f"Test case {i+1} - Expected: {expected}, Result: {result}, {'Passed' if result == expected else 'Failed'}")
