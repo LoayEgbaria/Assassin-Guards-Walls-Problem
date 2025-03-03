@@ -63,24 +63,37 @@ This repository contains a Python script that implements a pathfinding algorithm
 Install the required dependencies (if you don’t have them installed):
 
 bash
+
 Copy
+
 Edit
+
 pip install matplotlib
+
 Run the pathfinding.py script:
 
 bash
+
 Copy
+
 Edit
+
 python pathfinding.py
+
 This will run the test cases and show visualizations of the maze and the BFS exploration process.
 
 How to Create and Test Your Own Maze:
+
 To create your own maze, modify the test_cases section in the script. The maze is represented as a list of strings, where each string corresponds to a row of the maze. Here's an example of how to define your maze:
 
 python
+
 Copy
+
 Edit
+
 test_cases = [
+
     {
         "input": 
         
@@ -119,7 +132,9 @@ Here are a few test cases you can run:
 Basic Path: The assassin can move freely to the target position.
 
 python
+
 Copy
+
 Edit
 
 "input": 
@@ -140,7 +155,9 @@ Edit
 Blocked Path by Guard and Path Between Two Walls: The assassin can still find a path avoiding the guards.
 
 python
+
 Copy
+
 Edit
 
 "input": 
@@ -161,7 +178,9 @@ Edit
 Guard Observing the Target Position: The assassin cannot reach the target as the target is observed by the guard.
 
 python
+
 Copy
+
 Edit
 
 "input": 
@@ -182,7 +201,9 @@ Edit
 Walls Surrounding the Assassin: The assassin is trapped by walls and cannot move.
 
 python
+
 Copy
+
 Edit
 
 "input": 
@@ -200,7 +221,8 @@ Edit
     "....."
 ]
 
-License
+License:
+
 This project is licensed under the MIT License - see the LICENSE file for details.
 
 
@@ -208,4 +230,5 @@ Hope this code will help you in your pathfinding projects and inspire further ex
 
 
 Developed by:
+
 Loay Egbaria
