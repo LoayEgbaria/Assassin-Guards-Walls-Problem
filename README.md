@@ -203,5 +203,9 @@ Edit
 License
 This project is licensed under the MIT License - see the LICENSE file for details.
 
+
+Hope this code will help you in your pathfinding projects and inspire further exploration!.
+
+
 Developed by:
 Loay Egbaria
