@@ -82,21 +82,33 @@ Copy
 Edit
 test_cases = [
     {
-        "input": [
+        "input": 
+        [
             "A....",
+
             ".....",
+
             ".....",
+
             ".....",
+
             "....."
         ],
+        
         "expected_output": True
     }
 ]
+
 'A': The starting position of the assassin.
+
 '.': Walkable space.
+
 'X': Walls.
+
 '<', '>', '^', 'v': Guards, each observing in a specific direction.
+
 '*': Cells observed by guards.
+
 You can modify the maze layout and define multiple test cases to check different scenarios.
 
 Example Test Cases
@@ -107,49 +119,77 @@ Basic Path: The assassin can move freely to the target position.
 python
 Copy
 Edit
-"input": [
+
+"input": 
+[
     "A....",
+
     ".....",
+
     ".....",
+
     ".....",
+
     "....."
 ]
+
 Blocked Path by Guard and Path Between Two Walls: The assassin can still find a path avoiding the guards.
 
 python
 Copy
 Edit
-"input": [
+
+"input": 
+[
     "A....",
+
     "..^..",
+
     "..>..",
+
     "..X..",
+
     "X...."
 ]
+
 Guard Observing the Target Position: The assassin cannot reach the target as the target is observed by the guard.
 
 python
 Copy
 Edit
-"input": [
+
+"input": 
+[
     "A....",
+
     ".....",
+
     "....v",
+
     ".....",
+
     ".X..."
 ]
+
 Walls Surrounding the Assassin: The assassin is trapped by walls and cannot move.
 
 python
 Copy
 Edit
-"input": [
+
+"input": 
+[
     "AXXX.",
+
     ".....",
+
     ".....",
+
     ".....",
+
     "....."
 ]
+
 License
 This project is licensed under the MIT License - see the LICENSE file for details.
 
