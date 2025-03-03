@@ -58,8 +58,8 @@ This repository contains a Python script that implements a pathfinding algorithm
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/LoayEgbaria/Assassin-Guards-Walls-Problem.git
-   cd Assassin-Guards-Walls-Problem
+   git clone https://github.com/LoayEgbaria/Maze-Pathfinding-with-Guard-Vision-and-Walls.git
+   cd Maze-Pathfinding-with-Guard-Vision-and-Walls
 Install the required dependencies (if you don’t have them installed):
 
 bash
