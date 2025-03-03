@@ -84,3 +84,74 @@ def draw_maze(board, explored=None, shortest_path=None):
         bbox=dict(facecolor='white', alpha=0.7, edgecolor='yellow', boxstyle='round,pad=0.3'))
     
     plt.show()
+    
+    
+    
+def solution(B, visualize=False):
+    N = len(B)
+    M = len(B[0])
+
+    # Convert the board to a list of lists for easier manipulation
+    board = [list(row) for row in B]
+
+    # Mark cells observed by guards
+    def mark_observed(x, y, dx, dy):
+        nx, ny = x + dx, y + dy
+        while 0 <= nx < N and 0 <= ny < M:
+            if board[nx][ny] == 'X' or board[nx][ny] in ['<', '>', '^', 'v']:
+                break  # Stop if we hit an obstacle or another guard
+            if board[nx][ny] in ['.', 'A']:
+                board[nx][ny] = '*'  # Mark the cell as observed
+            nx += dx
+            ny += dy
+
+    # Iterate through the board and mark observed cells
+    startX, startY = -1, -1
+    for i in range(N):
+        for j in range(M):
+            c = board[i][j]
+            if c == 'A':
+                startX, startY = i, j
+            elif c == '<':
+                mark_observed(i, j, 0, -1)
+            elif c == '>':
+                mark_observed(i, j, 0, 1)
+            elif c == '^':
+                mark_observed(i, j, -1, 0)
+            elif c == 'v':
+                mark_observed(i, j, 1, 0)
+
+    # If the bottom-right cell or the assassin's starting position is observed, return False
+    if board[N - 1][M - 1] == '*' or board[startX][startY] == '*':
+        if visualize:
+            draw_maze(board)
+        return False
+
+    # BFS to find a path to the bottom-right cell
+    visited = [[False] * M for _ in range(N)]
+    queue = deque([(startX, startY, [])])  # Store path along with (x, y)
+    visited[startX][startY] = True
+    explored = []  # Track explored cells
+    shortest_path = []
+
+    while queue:
+        x, y, path = queue.popleft()
+        explored.append((x, y))
+
+        if x == N - 1 and y == M - 1:
+            shortest_path = path + [(x, y)]
+            if visualize:
+                draw_maze(board, explored, shortest_path)
+            return True  # Reached the bottom-right cell
+
+        # Explore all four directions
+        for dx, dy in [(1, 0), (-1, 0), (0, 1), (0, -1)]:
+            nx, ny = x + dx, y + dy
+            if 0 <= nx < N and 0 <= ny < M and not visited[nx][ny]:
+                if board[nx][ny] == '.':  # Only move into safe, non-observed cells
+                    visited[nx][ny] = True
+                    queue.append((nx, ny, path + [(x, y)]))
+
+    if visualize:
+        draw_maze(board, explored)
+    return False  # No path found
