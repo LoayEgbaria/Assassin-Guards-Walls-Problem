@@ -58,8 +58,8 @@ This repository contains a Python script that implements a pathfinding algorithm
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/maze-pathfinding.git
-   cd maze-pathfinding
+   git clone https://github.com/LoayEgbaria/Assassin-Guards-Walls-Problem.git
+   cd Assassin-Guards-Walls-Problem
 Install the required dependencies (if you don’t have them installed):
 
 bash
@@ -83,6 +83,7 @@ Edit
 test_cases = [
     {
         "input": 
+        
         [
             "A....",
 
@@ -94,7 +95,7 @@ test_cases = [
 
             "....."
         ],
-        
+
         "expected_output": True
     }
 ]
@@ -121,6 +122,7 @@ Copy
 Edit
 
 "input": 
+
 [
     "A....",
 
@@ -140,6 +142,7 @@ Copy
 Edit
 
 "input": 
+
 [
     "A....",
 
@@ -159,6 +162,7 @@ Copy
 Edit
 
 "input": 
+
 [
     "A....",
 
@@ -178,6 +182,7 @@ Copy
 Edit
 
 "input": 
+
 [
     "AXXX.",
 
