@@ -22,7 +22,7 @@ This repository contains a Python script that implements a pathfinding algorithm
   - Assassin's starting position (blue circle)
   - Target position (yellow circle)
 
-## How It Works
+## How It Works:
 
 ### 1. **Guard Vision**:
    - Each guard (denoted by **'<'**, **'>'**, **'^'**, **'v'**) marks a straight line of sight in the direction they are facing.
@@ -85,6 +85,7 @@ test_cases = [
         "input": 
         
         [
+
             "A....",
 
             ".....",
@@ -124,6 +125,7 @@ Edit
 "input": 
 
 [
+
     "A....",
 
     ".....",
@@ -144,6 +146,7 @@ Edit
 "input": 
 
 [
+
     "A....",
 
     "..^..",
@@ -164,6 +167,7 @@ Edit
 "input": 
 
 [
+
     "A....",
 
     ".....",
@@ -184,6 +188,7 @@ Edit
 "input": 
 
 [
+
     "AXXX.",
 
     ".....",
