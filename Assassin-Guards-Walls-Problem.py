@@ -1,3 +1,36 @@
+"""
+Maze Pathfinding with Guard Vision and Walls
+
+This script implements a pathfinding algorithm to determine if an assassin (A) can safely reach 
+a target position in a maze while avoiding obstacles and guards. 
+
+## Key Features:
+- **Maze Representation**: The maze is defined as a grid of characters:
+  - 'A' : Assassin's starting position
+  - '.' : Walkable empty space
+  - 'X' : Walls that block movement
+  - '<', '>', '^', 'v' : Guards, each observing in a specific direction
+  - '*' : Cells observed by guards (determined dynamically)
+- **Guard Vision**: The script marks cells observed by guards in the directions they face.
+- **Pathfinding Algorithm**: A Breadth-First Search (BFS) is used to explore paths from the assassin to the target.
+- **Visualization**: The `draw_maze` function provides a visual representation of the maze, including:
+  - Explored paths (blue)
+  - Shortest path (green, if found)
+  - Walls, guards, and observed areas with distinct colors
+  - Assassin's starting position (blue circle)
+  - Target position (yellow circle)
+
+## Usage:
+- The `solution` function determines if a path exists from 'A' to the bottom-right corner.
+- Set `visualize=True` to see the maze representation and exploration process.
+
+## Test Cases:
+- Several test cases are included to verify the functionality of the algorithm under different conditions.
+
+## Developed by:
+- Loay Egbaria
+"""
+
 from collections import deque
 import matplotlib.pyplot as plt
 
@@ -84,9 +117,8 @@ def draw_maze(board, explored=None, shortest_path=None):
         bbox=dict(facecolor='white', alpha=0.7, edgecolor='yellow', boxstyle='round,pad=0.3'))
     
     plt.show()
-    
-    
-    
+
+
 def solution(B, visualize=False):
     N = len(B)
     M = len(B[0])
@@ -232,8 +264,6 @@ test_cases = [
         "expected_output": False
     }
 ]
-
-
 
 # Run Test Cases
 for i, test_case in enumerate(test_cases):
